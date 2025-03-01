@@ -47,7 +47,7 @@ const NutritionDashboard = () => {
             if (!response.ok) throw new Error(data.message || "خطأ أثناء إرسال البيانات");
 
             toast.success("تم إنشاء نظامك الغذائي!");
-            router.push("/");
+            router.push("/displayDiet");
         } catch (error) {
             console.error("Error:", error);
             toast.error("خطأ أثناء إرسال البيانات");
