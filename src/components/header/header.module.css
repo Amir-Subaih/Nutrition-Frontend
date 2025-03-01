@@ -1,0 +1,109 @@
+.Header {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border-bottom: 4px solid rgb(227,225,144);
+    background-color: rgb(227,200,144);
+    position: relative;
+    direction: rtl; /* Add RTL direction */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(83, 90, 38);
+}
+
+.menu {
+    display: none;
+    cursor: pointer;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(83, 90, 38);
+}
+
+.navLinks {
+    margin-right: 30px; /* Change left margin to right for RTL */
+}
+
+.navLink {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(83, 90, 38);
+    margin: 0 12px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 5px 10px;
+    font-size: 21px;
+    font-weight: 600;
+    color: rgb(100, 90, 70);
+    background-color: rgb(227,210,104);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+}
+
+.btn:hover {
+    background-color: rgb(227,225,144);
+}
+
+.navLink:hover {
+    color: rgb(227,225,144);
+}
+
+@media (max-width: 1080px) {
+    .logo {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .navLinksWrapper {
+        position: absolute;
+        right: 0; /* Change left to right for RTL */
+        top: 100%;
+        width: 100%;
+        background-color: inherit;
+        transition: all 0.5s ease-in;
+        z-index: 100;
+        background-color: rgb(227,200,144);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .navLinks {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* Align to the right */
+        gap: 20px;
+        padding-right: 30px; /* Change left padding to right for RTL */
+        padding-bottom: 10px;
+        margin-right: 0; /* Change left margin to right for RTL */
+        justify-content: center;
+    }
+
+    .navLink {
+        padding: 0;
+        margin: 12px 0;
+    }
+}
