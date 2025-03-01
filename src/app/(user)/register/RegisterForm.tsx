@@ -35,6 +35,11 @@ const RegisterForm = () => {
         }))
     }
 
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        // Your code here
+    };
+
     const formSubmitHandler = async (e: React.FormEvent) => {
         e.preventDefault()
 

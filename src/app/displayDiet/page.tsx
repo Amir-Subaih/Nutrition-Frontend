@@ -3,10 +3,20 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useUser } from "@/components/context1/UserContext";
 
+interface NutritionData {
+    id: string;
+    Weight: number;
+    Length: number;
+    FavoriteFood: string;
+    NotFavoriteFood: string;
+    createdAt: string;
+    Result: string;
+}
+
 const NutritionPage = () => {
     const { user } = useUser();
-    const [data, setData] = useState([]); // Ensure data is initialized as an array
-    const [selectedItem, setSelectedItem] = useState(null);
+    const [data, setData] = useState<NutritionData[]>([]); // Ensure data is initialized as an array
+    const [selectedItem, setSelectedItem] = useState<NutritionData | null>(null);
     const userId = user?.id || null;
     const TOKEN = user?.token || "";
 
@@ -45,7 +55,7 @@ const NutritionPage = () => {
         fetchData();
     }, [userId, TOKEN]);
 
-    const formatDate = (dateString) => {
+    const formatDate = (dateString: string) => {
         const date = new Date(dateString);
         return date.toISOString().split('T')[0];
     };
